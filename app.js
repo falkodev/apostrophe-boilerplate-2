@@ -1,26 +1,52 @@
 var path = require('path');
 
-var apos = require('apostrophe')({
-  shortName: 'apostrophe-boilerplate',
+const defaultLocale = 'en-US';
 
-  // See lib/modules for basic project-level configuration of our modules
-  // responsible for serving static assets, managing page templates and
-  // configuring user accounts.
-
+module.exports = require('apostrophe')({
+  root: module,
+  shortName: 'apostrophe-boilerplate-2',
   modules: {
 
-    // Apostrophe module configuration
-
-    // Note: most configuration occurs in the respective
-    // modules' directories. See lib/apostrophe-assets/index.js for an example.
-    
-    // However any modules that are not present by default in Apostrophe must at
-    // least have a minimal configuration here: `moduleName: {}`
-
-    // If a template is not found somewhere else, serve it from the top-level
-    // `views/` folder of the project
-
-    'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') }
-
+    'apostrophe-db': {
+      connect: {
+        useUnifiedTopology: true
+      }
+    },
+    'apostrophe-templates': { viewsFolderFallback: path.join(__dirname, 'views') },
+    'apostrophe-i18n': {
+      namespaces: true
+    },
+    'apostrophe-i18n-static': {
+      defaultLocale,
+      // objectNotation: true,
+      disableLocaleChange: true,
+      ignoreNamespaces: [ 'apostrophe' ],
+      locales: [
+        {
+          label: 'English',
+          value: 'en-US',
+        },
+        {
+          label: 'Spanish',
+          value: 'es-ES',
+        },
+        {
+          label: 'French',
+          value: 'fr-FR',
+        },
+        {
+          label: 'German',
+          value: 'de-DE',
+        },
+        {
+          label: 'Austrian',
+          value: 'de-AT',
+        },
+        {
+          label: 'Swiss',
+          value: 'de-CH',
+        },
+      ]
+    }
   }
 });

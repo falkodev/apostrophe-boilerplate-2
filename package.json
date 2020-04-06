@@ -4,6 +4,7 @@
   "description": "Minimal Apostrophe Boilerplate",
   "main": "app.js",
   "scripts": {
+    "dev": "monitor",
     "start": "node app.js"
   },
   "repository": {
@@ -13,7 +14,9 @@
   "author": "P'unk Avenue",
   "license": "MIT",
   "dependencies": {
-    "apostrophe": "^2.103.1"
+    "apostrophe": "^2.103.1",
+    "apostrophe-i18n-static": "^1.0.0-alpha.4",
+    "apostrophe-monitor": "^2.0.5"
   },
   "nodemonConfig": {
     "verbose": true,

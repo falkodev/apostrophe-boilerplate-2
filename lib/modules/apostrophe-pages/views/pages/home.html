@@ -12,6 +12,23 @@
         <a class="login-link" href="{{ apos.prefix }}/login">Login</a>
       {% endif %}
     </h3>
-    <p>This is a very bare bones Apostrophe project. Now, get to work and make a real website!</p>
+    <p>
+      {{ __('Hello World') }}<br>
+      {{ __n('%s cat', 1) }}<br>
+      {{ __n('%s cat', 3) }}<br>
+      {{ __n('%s dog', 1) }}<br>
+      {{ __n('%s dog', 2) }}<br>
+      {{ __('home') }}<br>
+      {{ __n('%s file', 1) }}<br>
+      {{ __n('%s file', 2) }}<br>
+      {{ __('greeting:Hello') }}<br>
+      {# {{ __('obj-nested-1:nested') }}<br>
+      {{ __('obj-nested-2') }}<br>
+      {{ __('obj-nested-7') }}<br>
+      {{ __('obj-nest') }}<br>
+      {{ __n('%s nested-deep-val', 1) }}<br>
+      {{ __n('%s nested-deep-val', 3) }}<br>
+      {{ __('test') }}<br> #}
+    </p>
   </div>
 {% endblock %}
